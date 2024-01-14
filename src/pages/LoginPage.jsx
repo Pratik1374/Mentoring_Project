@@ -1,39 +1,48 @@
 import React, { useState } from "react";
 import profileIcon from "../assets/profile_icon.jpg";
 import { useAuth } from "../context/auth";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [auth, setAuth] = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     
     try {
-        const res = await axios.post(
-          `${import.meta.env.VITE_API_URL}/api/v1/auth/login`,
-          { email, password }
-        );
-        if (res && res.data.success) {
-          setAuth({
-            ...auth,
-            user: res.data.user,
-            token: res.data.token,
-          });
-          localStorage.setItem("auth", JSON.stringify(res.data));
-          navigate("/");
+        // const res = await axios.post(
+        //   `${import.meta.env.VITE_API_URL}/api/v1/auth/login`,
+        //   { username, password }
+        // );
+        // if (res && res.data.success) {
+        //   setAuth({
+        //     ...auth,
+        //     user: res.data.user,
+        //     token: res.data.token,
+        //   });
+        //   localStorage.setItem("auth", JSON.stringify(res.data));
+        //   navigate("/");
+        // } else {
+        //   alert(res.data.message);
+        // }
+
+        if(username === "user1" && password === "pass@123") {
+          navigate("/add_batch");
         } else {
-          alert(res.data.message);
+          alert("Invalid Credentials");
         }
+
       } catch (error) {
         alert("Something went wrong!!!");
       }
   };
 
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-md w-[80vw] lg:w-[25vw] max-w-sm h-[60vh] md:h-[80vh]">
+    <div className="text-black min-h-screen flex items-center justify-center">
+      <div className="bg-white p-8 rounded-lg login_card_shadow w-[80vw] lg:w-[25vw] max-w-sm h-[60vh] md:h-[80vh]">
         <h1 className="text-2xl font-bold mb-6 text-center">Welcome</h1>
         <div className="flex justify-center items-center rounded-full overflow-hidden ">
           <img
