@@ -7,6 +7,8 @@ import MentorDetailsPage from "./pages/MentorDetailsPage";
 import BatchesPage from "./pages/BatchesPage";
 import StudentsPage from "./pages/StudentsPage";
 import StudentDetailsPage from "./pages/StudentDetailsPage";
+import OperationalTeamHomePage from "./pages/operational_team/OperationalTeamHomePage";
+import AllBatchesPage from "./pages/operational_team/AllBatchesPage";
 
 function App() {
 
@@ -20,7 +22,10 @@ function App() {
         <Route path="/:file_name/mentors/:mentor_name" element={<MentorDetailsPage />} /> 
         <Route path="/:file_name/mentors/:mentor_name/batches" element={<BatchesPage />} /> 
         <Route path="/:file_name/mentors/:mentor_name/batches/:batch_name" element={<StudentsPage />} />
-        <Route path="/:file_name/mentors/:mentor_name/:batch_name/:student_name" element={<StudentDetailsPage />} />
+        
+        <Route path="/operationalteam" element={<OperationalTeamHomePage />} />
+        <Route path="/operationalteam/all-batches" element={<AllBatchesPage />} />
+
       </Routes>
     </>
   )

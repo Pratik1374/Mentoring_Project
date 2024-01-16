@@ -11,33 +11,65 @@ const LoginPage = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+
     try {
-        // const res = await axios.post(
-        //   `${import.meta.env.VITE_API_URL}/api/v1/auth/login`,
-        //   { username, password }
-        // );
-        // if (res && res.data.success) {
-        //   setAuth({
-        //     ...auth,
-        //     user: res.data.user,
-        //     token: res.data.token,
-        //   });
-        //   localStorage.setItem("auth", JSON.stringify(res.data));
-        //   navigate("/");
-        // } else {
-        //   alert(res.data.message);
-        // }
+      // let err = [];
+      // setErrors(err);
+      // if (!userEmail) {
+      //   err["userEmailError"] = "Please enter email";
+      // }
+      // if (!userPassword) {
+      //   err["userPasswordError"] = "Please enter password";
+      // }
+      // const noError = Object.keys(err).length === 0;
 
-        if(username === "user1" && password === "pass@123") {
-          navigate("/add_batch");
-        } else {
-          alert("Invalid Credentials");
-        }
+      // if (noError) {
+      //   const payload = {
+      //     userEmail: username,
+      //     userPassword: password,
+      //   };
 
-      } catch (error) {
-        alert("Something went wrong!!!");
+      //   axios
+      //     .post("http://localhost:8091/user/authenticate", payload)
+      //     .then((response) => {
+      //       localStorage.setItem("BearerToken", JSON.stringify(response.data));
+
+      //       axios
+      //         .get(
+      //           "http://localhost:8091/user/login/" +
+      //             username +
+      //             "/" +
+      //             password,
+      //           {
+      //             headers: {
+      //               Authorization: "Bearer " + response.data,
+      //             },
+      //           }
+      //         )
+      //         .then((resp) => {
+      //           toast.success("Login successful", { autoClose: 9000 });
+      //           localStorage.setItem("UserData", JSON.stringify(resp.data));
+      //           localStorage.setItem("isLoggedIn", "true");
+      //           navigate(`${resp?.data?.role}`);
+      //         })
+      //         .catch((error) => {
+      //           alert(error.response.data);
+      //           toast.error("Failed to login");
+      //         });
+      //     })
+      //     .catch((error) => {
+      //       toast.error("Failed to login");
+      //     });
+      // }
+
+      if (username === "user1" && password === "pass@123") {
+        navigate("/operationalteam");
+      } else {
+        alert("Invalid Credentials");
       }
+    } catch (error) {
+      alert("Something went wrong!!!");
+    }
   };
 
   return (

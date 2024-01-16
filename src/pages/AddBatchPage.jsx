@@ -104,3 +104,4 @@ const AddBatchPage = () => {
 };
 
 export default AddBatchPage;
+
