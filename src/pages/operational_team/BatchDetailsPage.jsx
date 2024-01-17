@@ -21,16 +21,25 @@ const BatchDetailsPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // const fetchData = async () => {
+    // const fetchBatchData = async () => {
     //   try {
-    //     const response = await axios.get('your-api-endpoint-url/getAllBatch');
+    //     const response = await axios.get(`${import.meta.env.VITE_API_URL}/getBatchByBatchId/${batchId}`,);
     //     setBatchData(response.data);
     //   } catch (error) {
     //     console.error('Error fetching data:', error);
     //   }
     // };
+    // fetchBatchData();
 
-    // fetchData();
+    // const fetchCandidatesList = async () => {
+    //   try {
+    //     const response = await axios.get(`${import.meta.env.VITE_API_URL}/getBatchCandidateByBatchId/${batchData.batchId}`,);
+    //     setCandidateList(response.data);
+    //   } catch (error) {
+    //     console.error('Error fetching data:', error);
+    //   }
+    // };
+    // fetchCandidatesList();
 
     const dummyData = {
       batchId: 1,
@@ -429,6 +438,15 @@ const BatchDetailsPage = () => {
   };
 
   const handleUpdate = async () => {
+    // try {
+    //   const response = await axios.put(
+    //     `${import.meta.env.VITE_API_URL}/updateBatchDetail/${batchId}/${batchData.startDate}/${batchData.endDate}`
+    //   );
+    //   alert("Batch updated successfully");
+    // } catch (error) {
+    //   console.error("Error fetching data:", error);
+    // }
+
     alert("Batch updated successfully");
   };
 
@@ -577,9 +595,9 @@ const BatchDetailsPage = () => {
               <div
                 key={`candidate_${index}`}
                 className="bg-gray-900 rounded-lg overflow-hidden shadow-md p-4 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg cursor-pointer w-[80%] lg:w-[40%]"
-                onClick={() =>
-                  navigate(`/operationalteam/candidate/${candidate.employeeId}`)
-                }
+                // onClick={() =>
+                //   navigate(`/operationalteam/candidate/${candidate.employeeId}`)
+                // }
               >
                 <div className="flex flex-row w-full overflow-hidden">
                   <div className="w-[40px] h-[40px] bg-white rounded-full p-1">

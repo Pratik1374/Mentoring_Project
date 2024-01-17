@@ -6,7 +6,7 @@ import Modal from "react-modal";
 import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 
-Modal.setAppElement("#root"); // Set the root element for accessibility
+Modal.setAppElement("#root");
 
 const OperationalTeamHomePage = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -36,7 +36,6 @@ const OperationalTeamHomePage = () => {
     const { name, value } = e.target;
     setBatchData({ ...batchData, [name]: value });
 
-    // Check if all fields are filled to enable submit button
     const isDisabled = Object.values(batchData).some((field) => !field);
     setIsSubmitDisabled(isDisabled);
   };
@@ -63,7 +62,7 @@ const OperationalTeamHomePage = () => {
   const uploadFile = async () => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/${batchData.batchId}`,
+        `${import.meta.env.VITE_API_URL}/candidate/upload/${batchData.batchId}`,
         file,
         {
           headers: {

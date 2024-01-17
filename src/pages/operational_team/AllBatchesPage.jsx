@@ -9,16 +9,15 @@ const AllBatchesPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // const fetchData = async () => {
+    // const fetchAllBatches = async () => {
     //   try {
-    //     const response = await axios.get('your-api-endpoint-url/getAllBatch');
+    //     const response = await axios.get(`${import.meta.env.VITE_API_URL}/getAllBatch`);
     //     setBatchData(response.data);
     //   } catch (error) {
     //     console.error('Error fetching data:', error);
     //   }
     // };
-
-    // fetchData();
+    // fetchAllBatches();
 
     const dummyData = [
       {
@@ -82,7 +81,6 @@ const AllBatchesPage = () => {
         endDate: "2022-02-01",
       },
     ];
-
     setBatchData(dummyData);
   }, []);
 
