@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import studentsBatchImage from "../../assets/studentsBatch.png";
 import Navbar from "../../components/Navbar";
+import { Link, useNavigate } from "react-router-dom";
 
 const AllBatchesPage = () => {
   const [batchData, setBatchData] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // const fetchData = async () => {
@@ -92,8 +94,9 @@ const AllBatchesPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-1 overflow-hidden">
         {batchData.map((batch) => (
           <div
-            key={batch.batchId}
+            key={`batch_${batch.batchId}`}
             className="bg-gray-900 rounded-lg overflow-hidden shadow-md p-4 transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg cursor-pointer "
+            onClick={() => navigate(`/operationalteam/batch/${batch.batchId}`)}
           >
             <div className="flex flex-row">
               <div className="w-[40px] h-[40px] bg-white rounded-full p-1">
@@ -112,10 +115,10 @@ const AllBatchesPage = () => {
             </div>
 
             <div className="w-full flex justify-between">
-              <p className="text-gray-700">
+              <p className="text-gray-500">
                 Start Date: {new Date(batch.startDate).toLocaleDateString()}
               </p>
-              <p className="text-gray-700">
+              <p className="text-gray-500">
                 End Date: {new Date(batch.endDate).toLocaleDateString()}
               </p>
             </div>

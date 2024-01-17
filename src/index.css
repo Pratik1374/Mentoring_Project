@@ -10,6 +10,28 @@ body {
   min-height: 100vh;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /* background: #6d8cfc; */
+  background: #d9f7f6;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #4e4c4c;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .box-shadow {
   -webkit-box-shadow: 1px 1px 9px 1px rgba(13, 125, 135, 1);
   -moz-box-shadow: 1px 1px 9px 1px rgba(13, 125, 135, 1);

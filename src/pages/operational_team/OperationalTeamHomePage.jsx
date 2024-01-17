@@ -107,7 +107,7 @@ const OperationalTeamHomePage = () => {
         className="modal-content"
         overlayClassName="modal-overlay"
       >
-        <div className="absolute top-2 left-1/2 transform -translate-x-1/2 bg-white p-4  shadow-lg text-left w-[90vw] lg:max-w-md max-h-[95vh] overflow-auto text-black">
+        <div className="absolute top-[75px] left-1/2 transform -translate-x-1/2 bg-white p-4  shadow-lg text-left w-[90vw] lg:max-w-md max-h-[85vh] overflow-auto text-black rounded">
           <h2 className="text-2xl font-semibold mb-4">Add New Batch</h2>
           <form>
             <div className="mb-4">

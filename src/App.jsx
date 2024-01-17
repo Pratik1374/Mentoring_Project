@@ -9,6 +9,7 @@ import StudentsPage from "./pages/StudentsPage";
 import StudentDetailsPage from "./pages/StudentDetailsPage";
 import OperationalTeamHomePage from "./pages/operational_team/OperationalTeamHomePage";
 import AllBatchesPage from "./pages/operational_team/AllBatchesPage";
+import BatchDetailsPage from "./pages/operational_team/BatchDetailsPage";
 
 function App() {
 
@@ -25,7 +26,8 @@ function App() {
         
         <Route path="/operationalteam" element={<OperationalTeamHomePage />} />
         <Route path="/operationalteam/all-batches" element={<AllBatchesPage />} />
-
+        <Route path="/operationalteam/batch/:batchId" element={<BatchDetailsPage />} />
+        
       </Routes>
     </>
   )
