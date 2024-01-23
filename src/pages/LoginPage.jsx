@@ -63,7 +63,7 @@ const LoginPage = () => {
       // }
 
       if (username === "user1" && password === "pass@123") {
-        navigate("/operationalteam");
+        navigate("/operationalteam/dashboard");
       } else {
         alert("Invalid Credentials");
       }
