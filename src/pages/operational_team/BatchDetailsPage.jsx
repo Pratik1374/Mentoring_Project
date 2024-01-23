@@ -451,9 +451,11 @@ const BatchDetailsPage = () => {
   };
 
   return (
-    <>
+    <div className="flex h-screen overflow-auto flex-col lg:flex-row">
       <Navbar />
-      <div className="pt-[75px] flex flex-wrap justify-around">
+      <div className="w-full h-screen overflow-auto">
+      <h2 className="text-2xl text-center font-semibold mb-4 text-cyan-200">Batch Details</h2>
+      <div className="flex flex-wrap justify-around mt-3">
         <div className="flex w-[90vw] lg:w-1/3 bg-gray-600 p-5 mb-2 rounded">
           <form className="font-bold">
             <div className="mb-4">
@@ -619,7 +621,8 @@ const BatchDetailsPage = () => {
           </div>
         </div>
       </div>
-    </>
+      </div>
+    </div>
   );
 };
 
